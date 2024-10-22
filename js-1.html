@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous" ></script>
+    <title>DOM_JS. Считываем информацию из DOM</title>
+</head>
+<style type="text/css">
+    body { 
+     background-image: url(passpotr_shablon.png); 
+     background-position: center-bottom; 
+     background-repeat: no-repeat;
+    }
+    .block1 {
+    margin-left: 80px;
+    margin-top: 60px;
+    font: bold 90% serif;
+    }
+    .block2 {
+    margin-left: 70px;
+    margin-top: 30px;
+    }
+    .block3 {
+    margin-left: 250px;
+    margin-top: -17px;
+    }
+    .block4 {
+    margin-left: 218px;
+    margin-top: 185px;
+    font: bold 100% serif;
+    }
+    .block5 {
+    margin-left: 225px;
+    margin-top: 29px;
+    }
+    .block6 {
+    margin-left: 210px;
+    margin-top: 4px;
+    }
+    .block7 {
+    margin-left: 150px;
+    margin-top: 4px;
+    }
+    .block8 {
+    margin-left: 250px;
+    margin-top: -17px;
+    }
+    .block9 {
+    margin-left: 180px;
+    margin-top: 3px;
+    }
+    .photo {
+    margin-left: 20px;
+    margin-top: -90px;
+    }
+</style>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="js-1.html">DOM_JS. Считываем информацию из DOM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="js-2.html">Изменяем кириллицу на латиницу по клику</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="js-3.html">Решение алгоритмической задачи</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="js-4.html">Решение оригинальной алгоритмической задачи</a>
+        </li>
+      </ul>
+      <p id="block1">УФМС РОССИИ ПО ГОР. МОСКВЕ <br> ПО РАЙОНУ x </p>
+      <div id="block2"> 29.12.2016</div>
+      <div id="block3"> 770-064</div>
+      <div id="block4"> Назарова </div>
+      <div id="block5"> Элли </div>
+      <div id="block6"> Алексеевна </div>
+      <div id="block7"> муж. </div>
+      <div id="block8"> 04.05.2005 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; муж </div>
+      <div id="block9"> гор.Москва </div>
+      <div id="photo"> <img src="images/passport.png" height="120" width="100"/> </div>
+     <script>
+        let element1 = document.getElementById("block4").innerHTML;
+        let element2 = document.getElementById("block5").innerHTML;
+        let element3 = document.getElementById("block6").innerHTML;
+        let element4 = document.getElementById("block8").innerHTML;
+        console.log("Фамилия: " + element1);
+        console.log("Имя: " + element2);
+        console.log("Отчество: " + element3);
+        console.log("Год рождения: " + element4);
+     </script>
+
+</body>

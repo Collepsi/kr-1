@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous" ></script>
+    <title>Решение алгоритмической задачи</title>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="js-1.html">DOM_JS. Считываем информацию из DOM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="js-2.html">Изменяем кириллицу на латиницу по клику</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="js-3.html">Решение алгоритмической задачи</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="js-4.html">Решение оригинальной алгоритмической задачи</a>
+        </li>
+      </ul>
+    <h3>Известна денежная сумма. Разменять её купюрами 500, 100, 10 и монетой 2 руб., если это возможно.</h3>
+    <script>
+        function myFunction() {
+            const input = document.getElementById("myInput");
+            const inputValue = input.value;
+            console.log(inputValue);
+            if (inputValue > 500){
+                let inputDiv = Math.floor(inputValue/500);
+                let inputDiv1 = Math.floor((inputValue-inputDiv*500)/100);
+                let inputDiv2 = Math.floor((inputValue-inputDiv*500-inputDiv1*100)/10);
+                console.log(inputDiv);
+                console.log(inputDiv1);
+                console.log(inputDiv2);
+                document.getElementById("FiveHundreds").innerHTML = inputDiv;
+                document.getElementById("Hundreds").innerHTML = inputDiv1;
+                document.getElementById("Tens").innerHTML = inputDiv2;
+            } else if (inputValue < 500 && inputValue > 100){
+                let inputDiv3 = Math.floor(inputValue/100);
+                let inputDiv4 = Math.floor((inputValue-inputDiv3*100)/10);
+                console.log(inputDiv3);
+                console.log(inputDiv4);
+                document.getElementById("Hundreds").innerHTML = inputDiv3;
+                document.getElementById("Tens").innerHTML = inputDiv4;
+            } else if (inputValue < 100 && inputValue > 10){
+                let inputDiv5 = Math.floor(inputValue/10);
+                console.log(inputDiv5);
+                document.getElementById("Tens").innerHTML = inputDiv5;
+            } else {
+                let inputDiv7 = Math.floor((inputValue-inputDiv6*2)/10);
+                console.log(inputDiv7);
+                document.getElementById("Twos").innerHTML = inputDiv7;
+            };
+        };
+
+        function clearResult(){
+            document.getElementById("FiveHundreds").innerHTML = '';
+            document.getElementById("Hundreds").innerHTML = '';
+            document.getElementById("Tens").innerHTML = '';
+            document.getElementById("Twos").innerHTML = '';
+        };
+    </script>
+    <input type="text" id="myInput"/>
+    <button type="button" id="btn" onclick="myFunction()">Посчитать</button>
+    <button type="button" value="Reset" onclick="clearResult()">Обновить</button>
+
+    <h4>Количество купюр в 500 рублей: <span id="FiveHundreds"></span></h4>
+    <h4>Количество купюр в 100 рублей: <span id="Hundreds"></span></h4>
+    <h4>Количество купюр в 10 рублей: <span id="Tens"></span></h4>
+    <h4>Количество монет в 2 рубля: <span id="Twos"></span></h4>
+
+</body>

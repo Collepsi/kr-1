@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="form_style.css">
+    <meta name="viewport">
+    <title>Form</title>
+</head>
+<body>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="main.html"><img src="/images/hse.jpg"></a>
+    </li>
+    <li class="nav-item dropdown active">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="main.html" role="button" aria-haspopup="true" aria-expanded="false">Главная</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#carouselExampleIndicators">Примеры работ</a>
+        <a class="dropdown-item" href="#">Почему мы?</a>
+        <a class="dropdown-item" href="#contacts">Контакты</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://www.google.com" target="_blank">Внешний сайт</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="ph-2.html">Заказать</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="ph-3.html">Цены</a>
+    </li>
+  </ul>
+    <form id="form" action="https://www.google.com" id="UserEnter" name="UserEnter" target="_blank">
+        <h6>Ваши ФИО</h6>
+        <input type="text" name="name" placeholder="Введите ФИО"></input>
+        <h6>Ваша почта</h6>
+        <input type="text" name="mail" placeholder="Введите почту"></input>
+        <h6>Ваш номер телефона</h6>
+        <input type="text" name="phone" placeholder="Введите телефон"></input>
+        <h6>Выберете тип продукта</h6>
+        <select id="product-type" name="product-type" size="1">
+          <option value="maket1">Макет1</option>
+          <option value="maket2">Макет2</option>
+        </select>
+        <h6>Количество экзамляров</h6>
+        <input type="number" name="number" min="0" oninput="this.value = Math.abs(this.value)"></input>
+        <fieldset>
+            <h6>Выберете тип доставки</h6>
+            <input type="radio" name="delivery" value="СДЭК">СДЭК</input>
+            <input type="radio" name="delivery" value="Почта России">Почта России</input>
+            <input type="radio" name="delivery" value="Самовывоз">Самовывоз</input>
+        </fieldset>
+        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg, .pdf, .svg" />
+        <h6>Дата доставки</h6>
+        <input type="date" name="date"></input>
+        <h6>Комментарии</h6>
+        <textarea name="comments" id="comments"></textarea>
+        <input type="hidden" name="csrf_token" value="somerandomvalue"></input>
+        <input name="submit" type="submit" id="send" value="Отправить">
+        
+    </form>
+</body>

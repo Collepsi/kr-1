@@ -1,0 +1,125 @@
+body{
+    margin: 0px;
+    background-color: #fdfff8;
+    width:100%;
+    text-align: center;
+}
+
+main{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+
+.info{
+    display: flex;
+    align-items: center;
+}
+article{
+    width:450px;
+    text-align: left;
+    border-width: 20px;
+    border-color: #b2f219;
+}
+h1{
+    color: #181f02;
+    background-color: #b2f219;
+    text-align: left;
+    width: 430px;
+    animation: openclose;
+    animation-duration: 3s;
+}
+@keyframes openclose {
+    0% {
+      width: 250px;
+    }
+    100% {
+      width: 430px;
+    }
+  }
+
+
+
+article p{
+    color: #181f02;
+}
+
+.title{
+    margin-left: 300px;
+}
+.title h2{
+    text-align: center;
+
+}
+
+.services{
+    padding-top: 20px;
+    text-align: left;
+}
+
+
+.team{
+    display: flex;
+    padding: 100px;
+    width: 500px;
+}
+  
+  /* Clear floats after image containers */
+.member {
+    flex: 33.33%;
+    padding: 5px;
+
+}
+
+
+.why-us{
+    padding-top: 100px;
+}
+.why-us ol{
+    text-align: left;
+}
+
+
+.carousel-inner img{
+    object-fit: cover;
+}
+
+.carousel-caption{
+    background: rgb(2,0,36);
+
+}
+
+footer{
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-top: 50px;
+    text-align: left;
+}
+footer ul{
+    list-style: none;
+    vertical-align:baseline;
+}
+.row{
+    display: inline-block;
+    width: 20%;
+}
+.row2{
+    display: inline-block;
+    width: 20%;
+}
+
+.map iframe{
+    width: 100%;
+    height: 200px;
+}
+
+
+.btnScrollToTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    border: none;
+    z-index: 99;
+    display: none;
+  }

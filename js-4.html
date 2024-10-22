@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous" ></script>
+    <title>Решение оригинальной алгоритмической задачи</title>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="js-1.html">DOM_JS. Считываем информацию из DOM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="js-2.html">Изменяем кириллицу на латиницу по клику</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="js-3.html">Решение алгоритмической задачи</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="js-4.html">Решение оригинальной алгоритмической задачи</a>
+        </li>
+      </ul>
+    <h3>Пользователь вводит целое число N. Программа должна определить, является ли это число простым или нет.</h3>
+    <script>
+        function myFunction(){
+            // Запрос числа у пользователя
+            const number = document.getElementById("myInput");
+            const inputValue = number.value;
+
+            if (inputValue < 2) {
+                alert("Число должно быть больше 1");
+            } else {
+            for (let i = 2; i <= inputValue / 2 + 1; i++) {
+                if (inputValue % i === 0) {
+                    document.getElementById("result").innerHTML = "Число не является простым";
+                    break;
+                }
+                else if (!isNaN(inputValue)) {
+                    document.getElementById("result").innerHTML = "Число простое";
+                }
+                }
+            }
+        };
+    </script>
+    <form action="https://www.google.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+        <li><span>Введите число</span><input type="text" id="myInput"/></li>
+        <button type="button" id="btn" onclick="myFunction()">Проверить</button>
+        <li><span id="result"></span></li>
+        <button name="submit" type="submit" value="Отправить"></button>
+    </form>
+    
+
+    <!--Объявляем переменную N, в которую будет записываться число, введённое пользователем.
+    Запрашиваем у пользователя ввод числа N.
+    Создаём цикл с условием i <= N / 2, где i — счётчик цикла.
+    Внутри цикла проверяем, делится ли N на i без остатка. Если да, то число не простое. Выводим соответствующее сообщение и завершаем программу.
+    После завершения цикла выводим сообщение о том, что число простое.
+    Завершаем программу.-->
