@@ -57,7 +57,7 @@
             <li>Полноцветная печать на различных материалах;</li>
             <li>Послепечатная обработка:</li>
             <ul>
-              <li>Ламинаци</li> 
+              <li>Ламинация</li> 
               <li>Фальцовка</li>
               <li>Скрепление</li>
             </ul>
@@ -161,16 +161,15 @@
 
     <script>
       const btnScrollToTop = document.querySelector(".btnScrollToTop");
-      // scroll to top of page when button clicked
-      btnScrollToTop.addEventListener("click", e => {
+      btnScrollToTop.addEventListener("click", event => {
         window.scrollTo({
           top: 0,
           left: 0,
           behavior: "smooth"
         });
       });
-      // toggle 'scroll to top' based on scroll position
-      window.addEventListener('scroll', e => {
+
+      window.addEventListener('scroll', event => {
         btnScrollToTop.style.display = window.scrollY > 200 ? 'block' : 'none';
       });
     </script>
