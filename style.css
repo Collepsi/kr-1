@@ -60,15 +60,13 @@ article p{
 
 .team{
     display: flex;
-    padding: 100px;
-    width: 500px;
+    padding: 20px;
+    width: 1000px;
 }
   
-  /* Clear floats after image containers */
 .member {
     flex: 33.33%;
     padding: 5px;
-
 }
 
 

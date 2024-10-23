@@ -24,52 +24,30 @@
       </ul>
     <h3>Известна денежная сумма. Разменять её купюрами 500, 100, 10 и монетой 2 руб., если это возможно.</h3>
     <script>
-        function myFunction() {
-            const input = document.getElementById("myInput");
-            const inputValue = input.value;
+        function countChange() {
+            const inputValue = 4763;
             console.log(inputValue);
-            if (inputValue > 500){
                 let inputDiv = Math.floor(inputValue/500);
                 let inputDiv1 = Math.floor((inputValue-inputDiv*500)/100);
                 let inputDiv2 = Math.floor((inputValue-inputDiv*500-inputDiv1*100)/10);
+                let inputDiv3 = Math.floor(((inputValue-inputDiv*500-inputDiv1*100)%10)/2);
                 console.log(inputDiv);
                 console.log(inputDiv1);
                 console.log(inputDiv2);
+                console.log(inputDiv3);
                 document.getElementById("FiveHundreds").innerHTML = inputDiv;
                 document.getElementById("Hundreds").innerHTML = inputDiv1;
                 document.getElementById("Tens").innerHTML = inputDiv2;
-            } else if (inputValue < 500 && inputValue > 100){
-                let inputDiv3 = Math.floor(inputValue/100);
-                let inputDiv4 = Math.floor((inputValue-inputDiv3*100)/10);
-                console.log(inputDiv3);
-                console.log(inputDiv4);
-                document.getElementById("Hundreds").innerHTML = inputDiv3;
-                document.getElementById("Tens").innerHTML = inputDiv4;
-            } else if (inputValue < 100 && inputValue > 10){
-                let inputDiv5 = Math.floor(inputValue/10);
-                console.log(inputDiv5);
-                document.getElementById("Tens").innerHTML = inputDiv5;
-            } else {
-                let inputDiv7 = Math.floor((inputValue-inputDiv6*2)/10);
-                console.log(inputDiv7);
-                document.getElementById("Twos").innerHTML = inputDiv7;
+                document.getElementById("Coins").innerHTML = inputDiv3;
             };
-        };
-
-        function clearResult(){
-            document.getElementById("FiveHundreds").innerHTML = '';
-            document.getElementById("Hundreds").innerHTML = '';
-            document.getElementById("Tens").innerHTML = '';
-            document.getElementById("Twos").innerHTML = '';
-        };
     </script>
-    <input type="text" id="myInput"/>
-    <button type="button" id="btn" onclick="myFunction()">Посчитать</button>
-    <button type="button" value="Reset" onclick="clearResult()">Обновить</button>
+    <h4>4763 рубля</h4>
+
+    <input type="button" id="btn" value="Посчитать" onclick="countChange()">
 
     <h4>Количество купюр в 500 рублей: <span id="FiveHundreds"></span></h4>
     <h4>Количество купюр в 100 рублей: <span id="Hundreds"></span></h4>
     <h4>Количество купюр в 10 рублей: <span id="Tens"></span></h4>
-    <h4>Количество монет в 2 рубля: <span id="Twos"></span></h4>
+    <h4>Количество монет в 2 рубля: <span id="Coins"></span></h4>
 
 </body>

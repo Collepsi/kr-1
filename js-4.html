@@ -22,39 +22,43 @@
             <a class="nav-link active" href="js-4.html">Решение оригинальной алгоритмической задачи</a>
         </li>
       </ul>
-    <h3>Пользователь вводит целое число N. Программа должна определить, является ли это число простым или нет.</h3>
-    <script>
-        function myFunction(){
-            // Запрос числа у пользователя
-            const number = document.getElementById("myInput");
-            const inputValue = number.value;
-
-            if (inputValue < 2) {
-                alert("Число должно быть больше 1");
-            } else {
-            for (let i = 2; i <= inputValue / 2 + 1; i++) {
-                if (inputValue % i === 0) {
-                    document.getElementById("result").innerHTML = "Число не является простым";
-                    break;
-                }
-                else if (!isNaN(inputValue)) {
-                    document.getElementById("result").innerHTML = "Число простое";
-                }
-                }
-            }
-        };
-    </script>
-    <form action="https://www.google.com/search?" id="UserEnter" name="UserEnter" target="_blank">
-        <li><span>Введите число</span><input type="text" id="myInput"/></li>
-        <button type="button" id="btn" onclick="myFunction()">Проверить</button>
-        <li><span id="result"></span></li>
-        <button name="submit" type="submit" value="Отправить"></button>
-    </form>
-    
-
-    <!--Объявляем переменную N, в которую будет записываться число, введённое пользователем.
-    Запрашиваем у пользователя ввод числа N.
-    Создаём цикл с условием i <= N / 2, где i — счётчик цикла.
-    Внутри цикла проверяем, делится ли N на i без остатка. Если да, то число не простое. Выводим соответствующее сообщение и завершаем программу.
-    После завершения цикла выводим сообщение о том, что число простое.
-    Завершаем программу.-->
+      <h3>Известна денежная сумма. Разменять её купюрами 500, 100, 10 и монетой 2 руб., если это возможно.</h3>
+      <script>
+          function countChange() {
+              const input = document.getElementById("myInput");
+              const inputValue = input.value;
+              console.log(inputValue);
+                let inputDiv = Math.floor(inputValue/500);
+                let inputDiv1 = Math.floor((inputValue-inputDiv*500)/100);
+                let inputDiv2 = Math.floor((inputValue-inputDiv*500-inputDiv1*100)/10);
+                let inputDiv3 = Math.floor(((inputValue-inputDiv*500-inputDiv1*100)%10)/2);
+                console.log(inputDiv);
+                console.log(inputDiv1);
+                console.log(inputDiv2);
+                console.log(inputDiv3);
+                document.getElementById("FiveHundreds").innerHTML = inputDiv;
+                document.getElementById("Hundreds").innerHTML = inputDiv1;
+                document.getElementById("Tens").innerHTML = inputDiv2;
+                document.getElementById("Coins").innerHTML = inputDiv3;
+            };
+  
+          function clearResult(){
+            document.getElementById("myInput").innerHTML = '';
+            document.getElementById("FiveHundreds").innerHTML = '';
+            document.getElementById("Hundreds").innerHTML = '';
+            document.getElementById("Tens").innerHTML = '';
+            document.getElementById("Coins").innerHTML = '';
+          };
+      </script>
+      <form id="form" action="https://www.google.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+        <input type="text" id="myInput"/>
+        <input type="button" id="btn" value="Посчитать" onclick="countChange()">
+        <input type="reset" value="Обновить" onclick="clearResult()"/>
+        <h4>Количество купюр в 500 рублей: <span id="FiveHundreds"></span></h4>
+        <h4>Количество купюр в 100 рублей: <span id="Hundreds"></span></h4>
+        <h4>Количество купюр в 10 рублей: <span id="Tens"></span></h4>
+        <h4>Количество монет в 2 рубля: <span id="Coins"></span></h4>
+  
+        <input name="submit" type="submit" id="send" value="Отправить"/>
+      </form>
+  
