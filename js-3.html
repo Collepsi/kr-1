@@ -10,7 +10,7 @@
 <body>
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link" href="main.html"><img src="images/logo.png" width="20" height="20"></a>
+        <a class="nav-link" href="index.html"><img src="images/logo.png" width="20" height="20"></a>
       </li>
         <li class="nav-item">
           <a class="nav-link" href="js-1.html">DOM_JS. Считываем информацию из DOM</a>
@@ -31,9 +31,9 @@
             const inputValue = 4763;
             console.log(inputValue);
                 let inputDiv = Math.floor(inputValue/500);
-                let inputDiv1 = Math.floor((inputValue-inputDiv*500)/100);
-                let inputDiv2 = Math.floor((inputValue-inputDiv*500-inputDiv1*100)/10);
-                let inputDiv3 = Math.floor(((inputValue-inputDiv*500-inputDiv1*100)%10)/2);
+                let inputDiv1 = Math.floor(inputValue/100);
+                let inputDiv2 = Math.floor(inputValue/10);
+                let inputDiv3 = Math.floor(inputValue/2);
                 console.log(inputDiv);
                 console.log(inputDiv1);
                 console.log(inputDiv2);
