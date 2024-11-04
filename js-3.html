@@ -28,23 +28,38 @@
     <h3>Известна денежная сумма. Разменять её купюрами 500, 100, 10 и монетой 2 руб., если это возможно.</h3>
     <script>
         function countChange() {
-            const inputValue = 4763;
-            console.log(inputValue);
-                let inputDiv = Math.floor(inputValue/500);
-                let inputDiv1 = Math.floor(inputValue/100);
-                let inputDiv2 = Math.floor(inputValue/10);
-                let inputDiv3 = Math.floor(inputValue/2);
-                console.log(inputDiv);
-                console.log(inputDiv1);
-                console.log(inputDiv2);
-                console.log(inputDiv3);
-                document.getElementById("FiveHundreds").innerHTML = inputDiv;
-                document.getElementById("Hundreds").innerHTML = inputDiv1;
-                document.getElementById("Tens").innerHTML = inputDiv2;
-                document.getElementById("Coins").innerHTML = inputDiv3;
-            };
+            const amount = 4500;
+              // Получает введенную пользователем сумму
+
+              // Проверяет, можно ли разменять эту сумму купюрами и монетами
+              if (amount % 500 === 0) {
+                // Если возможно, выводит результат
+                document.getElementById("FiveHundreds").innerHTML = "Размен возможен: " + amount / 500;
+              } else {
+                // Иначе выводит сообщение о невозможности размена
+                document.getElementById("FiveHundreds").innerHTML = "Невозможно разменять данную сумму.";
+              }
+              
+              if (amount % 100 === 0) {
+                document.getElementById("Hundreds").innerHTML = "Размен возможен: " + amount / 100;
+              } else {
+                document.getElementById("Hundreds").innerHTML = "Невозможно разменять данную сумму.";
+              }
+
+              if (amount % 10 === 0) {
+                document.getElementById("Tens").innerHTML = "Размен возможен: " + amount / 10;
+              } else {
+                document.getElementById("Tens").innerHTML = "Невозможно разменять данную сумму.";
+              }
+
+              if (amount % 2 === 0) {
+                document.getElementById("Coins").innerHTML = "Размен возможен: " + amount / 2;
+              } else {
+                document.getElementById("Coins").innerHTML = "Невозможно разменять данную сумму.";
+              }
+            }
     </script>
-    <h4>4763 рубля</h4>
+    <h4>4500 рублей</h4>
 
     <input type="button" id="btn" value="Посчитать" onclick="countChange()">
 
